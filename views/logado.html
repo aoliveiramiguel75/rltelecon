@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    <title>Teste de QR Code!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel='stylesheet' href='public/stylesheets/style.css'/>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/regular.min.css">
+  </head>
+
+  <body>
+    <div>
+      <div class="jumbotron jumbotron-fluid text-center" id="ini">
+        <img src="public/images/teste.PNG" alt="..." class="img-fluid" id="img">
+          <h1><b>Lista de nomes autorizados</b></h1>
+      </div>
+
+    <div class="container pt-3">
+      <p><b>Esses usuários estão liberados para uasar o voucher:</b></p>  
+      <input class="form-control" id="myInput" type="text" placeholder="Busque aqui:">
+      <br>
+        <table class="table table-striped" id="ta">
+          <thead>
+                <tr>
+                  <th>Nome</th>
+                  <th>CPF</th>
+                  <th>Valor</th>
+                  <th>Whats</th>
+                </tr>
+            </thead>
+          <tbody id="myTable">
+            <tr>
+                <td>Maria jose</td>
+                <td>111.222.333.00</td>
+                <td>R$: 30,00</td>
+                <td>
+                  <a href="https://api.whatsapp.com/send?5511996261127&text=CPF:%20111.222.333.00%20Valor gasto: "  target="blank">
+                  <img alt="whats" src="public/images/whatsapp.PNG" id="imgf">
+                  </a>
+                </td>
+            </tr>
+            <tr>
+                <td>Marcos Antonio</td>
+                <td>444.555.666.00</td>
+                <td>R$: 60,00</td>
+                <td>
+                  <a href="https://api.whatsapp.com/send?5511996261127&text=CPF:%20444.555.666.00%20Valor gasto: "  target="blank">
+                  <img alt="whats" src="public/images/whatsapp.PNG" id="imgf">
+                  </a>
+                </td>
+              </tr>
+            <tr>
+                <td>Antonio josé</td>
+                <td>777.888.999.11</td>
+                <td>R$: 30,00</td>
+                <td>
+                  <a href="https://api.whatsapp.com/send?5511996261127&text=CPF:%20777.888.999.11%20Valor gasto: "  target="blank">
+                  <img alt="whats" src="public/images/whatsapp.PNG" id="imgf">
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td>Marcos Oliveira</td>
+                <td>123.456.789.00</td>
+                <td>R$: 90,00</td>
+                <td>
+                  <a href="https://api.whatsapp.com/send?5511996261127&text=CPF:%20123.456.789.00%20Valor gasto: "  target="blank">
+                  <img alt="whats" src="public/images/whatsapp.PNG" id="imgf">
+                  </a>
+                </td>
+              </tr>
+          </tbody>
+          </table>
+
+        
+    </div>
+     
+
+
+
+
+<script>
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>
+
+  </body>
+</html>
